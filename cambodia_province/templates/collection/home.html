@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Student List</h1>
+    {% for i in data %}
+        <h3>{{ i.first_name }} {{ i.last_name }}</h3>
+        <p>{{ i.gender }}</p>
+        <img width="150px" src="../../media/{{ i.avatar }}" alt="">
+    {% endfor %}
+</body>
+</html>
