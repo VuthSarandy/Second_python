@@ -6,8 +6,17 @@ from django.views import generic
 from django.core.paginator import Paginator
 from django.http import HttpResponse, JsonResponse
 from django.contrib.auth.models import User
+from rest_framework.views import APIView
+from rest_framework.response import Response
+from .serializers import *
 
 from .models import *
+class DisplayPerson(APIView): 
+    def get(self, request): 
+        person = Person.objects.all()
+        data = PersonSerializer(person, many=True).data 
+        return Response(data)
+        
 
 def home_page(request):
     data = Person.objects.all()

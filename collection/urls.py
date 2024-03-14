@@ -11,7 +11,7 @@ urlpatterns = [
     re_path('^person/(?P<id>\d+)/$', collection_view.find_person, name='find_person'),
 
     re_path('^api_person/$', collection_view.api_person, name='api_person'),
-
+re_path('^api_display_person/$', DisplayPerson.as_view(), name='api_display_person'),
     # re_path('^person/(?P<id>\d+)/(?P<name>\D+)$', collection_view.find_person_id_name, name='find_person'),
 ]
 
